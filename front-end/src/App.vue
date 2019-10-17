@@ -6,8 +6,13 @@
 </template>
 
 <script>
+import Navebar from './components/Navbar'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    navbar: Navebar
+  }
 }
 </script>
 

@@ -44,10 +44,6 @@ def create_user():
     response.headers['Location'] = url_for('api.get_user', id=user.id)
     return response
 
-
-
-
-
 @bp.route("/users", methods=['GET'])
 @token_auth.login_required
 def get_users():
@@ -91,9 +87,6 @@ def update_user(id):
     user.from_dict(data, new_user=False)
     db.session.commit()
     return jsonify(user.to_dict())
-
-
-
 
 @bp.route("/users/<int:id>", methods=['FELETE'])
 @token_auth.login_required
